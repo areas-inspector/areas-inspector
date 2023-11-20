@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,12 +70,25 @@ body {
   <a href="#clients">Clients</a>
   <a href="#contact">Contact</a> -->
 </div>
-
+<div>
 <div class="main">
   <h2>Areas Inspector</h2>
-  
+  <!-- The map code starts here-->
 </div>
-     
+  <div id="map" style="width:90%;height:800px;"></div>
+
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(13.716126290043812, 100.57484033792828), zoom: 10
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ5l4Zl-lS9o0KmhKY9soGPz6ehsoiWDI&callback=myMap" async defer></script>
+</div>
+<!-- The map code ends here-->
 </body>
 </html> 
-
