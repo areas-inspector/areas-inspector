@@ -19,10 +19,82 @@
       height: 100vh;
       width: 100vw;
     }
-  </style>
+
+    body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 5%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #56a1cc;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #5b5b5b;
+    display: block;
+}
+
+
+
+.sidenav a:hover {
+    color: #F1F1F1;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.icon-bar {
+    width: 90px; /* Set a specific width */
+    background-color: #56a1cc   /* #555; /* Dark-grey background */
+}
+
+.icon-bar a {
+    display: block; /* Make the links appear below each other instead of side-by-side */
+    text-align: center; /* Center-align text */
+    padding: 16px; /* Add some padding */
+    transition: all 0.3s ease; /* Add transition for hover effects */
+    color: white; /* White text color */
+    font-size: 36px; /* Increased font-size */
+}
+
+.icon-bar a:hover {
+    background-color: #c6c3c3; /* Add a hover color */
+}
+
+.active {
+    background-color: #0b5394; /* Add an active/current color */
+}
+    </style>
 </head>
 
 <body>
+
+
+
+
+
+
+
+
+
   <div id="map"></div>
   <script>
     function myMap() {
@@ -37,6 +109,22 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ5l4Zl-lS9o0KmhKY9soGPz6ehsoiWDI&callback=myMap" async
     defer></script>
   </div>
-</body>
+
+<div class="sidenav">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="icon-bar">
+  <a class="active" href="#"><i class="fa fa-home"></i></a>
+  <a href="index.html"><i class="fa fa-search"></i></a>
+  <a href="#"><i class="fa fa-envelope"></i></a>
+  <a href="#"><i class="fa fa-globe"></i></a>
+  <a href="#"><i class="fa fa-trash"></i></a>
+</div>
+
+
+  </body>
 
 </html>
