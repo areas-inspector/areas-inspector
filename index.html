@@ -1,94 +1,42 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Areas Inspector</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-<!-- Button CSS -->
-.btn {
-    background-color: greenyellow;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    font-size: 20px;;
-    cursor: pointer;
-}
 
-/* Darker background on mouse-over */
-.btn:hover {
-    background-color: RoyalBlue;
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Areas Inspector</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
     }
 
-body {
-    font-family: "Lato", sans-serif;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.sidenav {
-    height: 100%;
-    width: 70px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #741b47;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.main {
-    margin-left: 70px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-</style>
+    #map {
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
 </head>
+
 <body>
-
-<div class="sidenav">
-  <a class= "active item nav-button">
-      <button class="btn"; width=30px; hight=30px;><i class="fa fa-home"></i></button>
-  <!-- <a href="#about">Home</a>
-  <a href="#services">Services</a> 
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a> -->
-</div>
-<div>
-<div class="main">
-  <h2>Areas Inspector</h2>
-  <!-- The map code starts here-->
-</div>
-  <div id="map" style="width:90%;height:800px;"></div>
-
-<script>
-function myMap() {
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {
-    center: new google.maps.LatLng(13.716126290043812, 100.57484033792828), zoom: 10
-  };
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-}
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ5l4Zl-lS9o0KmhKY9soGPz6ehsoiWDI&callback=myMap" async defer></script>
-</div>
-<!-- The map code ends here-->
+  <div id="map"></div>
+  <script>
+    function myMap() {
+      var mapCanvas = document.getElementById("map");
+      var mapOptions = {
+        center: new google.maps.LatLng(13.716126290043812, 100.57484033792828),
+        zoom: 10
+      };
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ5l4Zl-lS9o0KmhKY9soGPz6ehsoiWDI&callback=myMap" async
+    defer></script>
+  </div>
 </body>
-</html> 
+
+</html>
