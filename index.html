@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Areas Inspector</title>
   <style>
     body,
@@ -10,33 +9,65 @@
       margin: 0;
       padding: 0;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
     #map {
       height: 100vh;
-      width: 100vw;
+      width: 100%;
     }
+    .app-container {
+  display: flex;
+}
+.left-nav-bar {
+  background-color: #56a1cc;
+  width: 50px;
+}
+.blue {
+  background-color: blue;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 40px;
+}
+.green {
+  background-color:green;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 40px;
+}
+.purple {
+  background-color:purple;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 40px;
+}
+.material-icons.md-36 { font-size: 36px; }
   </style>
-</head>
-
+  </head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <body>
-  <div id="map"></div>
-  <script>
-    function myMap() {
-      var mapCanvas = document.getElementById("map");
-      var mapOptions = {
-        center: new google.maps.LatLng(13.716126290043812, 100.57484033792828),
-        zoom: 10
-      };
-      var map = new google.maps.Map(mapCanvas, mapOptions);
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ5l4Zl-lS9o0KmhKY9soGPz6ehsoiWDI&callback=myMap" async
-    defer></script>
+    <div class = "app-container">
+        <nav class = "left-nav-bar">
+            <div class="material-icons md-36 blue"><a href="index.html">home</a></div>
+            <div class ="material-icons md-36 green"><a href="index.html">search</a></div>
+            <div class ="material-icons md-36 purple"><a href="index.html">person</a></div>
+        </nav> 
+        <div id="map"></div>
+        <script>
+            function myMap() {
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = {
+              center: new google.maps.LatLng(13.716126290043812, 100.57484033792828),
+              zoom: 10
+            };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+          }
+          window.addEventListener('load', myMap);          
+        </script>
+      </div>      
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ5l4Zl-lS9o0KmhKY9soGPz6ehsoiWDI&callback=myMap" async
+      defer></script>     
   </div>
 </body>
-
 </html>
